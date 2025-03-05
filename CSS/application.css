@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.form-container {
+	margin: 0 auto;
+	width: 700px;
+	text-align: center;
+}
+
+input {
+	padding: 10px;
+	font-size: 24px;
+	margin-bottom: 25px;
+}
+
+.sil {
+	float: left;
+	width: 315px;
+}
+
+.sir {
+	float: right;
+	width: 315px;
+}
+
+.sim {
+	width: 315px;
+}
+
+.li {
+	width: 677px;
+}
+
+.sol {
+	padding: 10px;
+	font-size: 24px;
+	margin-bottom: 25px;
+	width: 333px;
+	float: left;
+}
+
+.sor {
+	padding: 10px;
+	font-size: 24px;
+	margin-bottom: 25px;
+	width: 333px;
+	float: right;
+}
+
+#cv-container {
+    margin-bottom: 25px;
+    width: 677px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #8e8e8e;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Adjust height as needed */
+}
+
+#cv-container input[type="file"] {
+    display: block;
+    margin: 0 auto;
+	float: left;
+}
