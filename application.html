@@ -44,34 +44,34 @@
 			<form action="/action_page.php">
 				<h3>Personal Infomation</h3>
 				<div class="form-container">
-					<input type="text" class="sil" placeholder="Forename">
-					<input type="text" class="sir" placeholder="Surname">
-					<input type="text" class="li" placeholder="Email Address">
-					<input type="text" class="sim" placeholder="Phone Number">
+					<input type="text" class="sil" placeholder="Forename" required>
+					<input type="text" class="sir" placeholder="Surname" required>
+					<input type="email" class="li" placeholder="Email Address" required >
+					<input type="text" class="sim" placeholder="Phone Number" required>
 				</div>
 				<hr>
 				<h3>Experience & Qualifications</h3>
 				<div class="form-container">
-					<select class="sol">
-						<option disabled selected hidden>Position Applying For</option>
-						<option>Junior Web Developer</option>
-						<option>Front-End Developer</option>
-						<option>Back-End Developer</option>
-						<option>UI/UX Designer</option>
+					<select class="sol" required>
+						<option disabled selected hidden value="">Position Applying For</option>
+						<option value="Junior Web Developer">Junior Web Developer</option>
+						<option value="Front-End Developer">Front-End Developer</option>
+						<option value="Back-End Developer">Back-End Developer</option>
+						<option value="UI/UX Designer">UI/UX Designer</option>
 					</select>
-					<select class="sor">
-						<option disabled selected hidden>Preferred Arrangement</option>
-						<option>Remote</option>
-						<option>Hybrid</option>
-						<option>In-Office</option>
+					<select class="sor" required>
+						<option disabled selected hidden value="">Preferred Arrangement</option>
+						<option value="Remote">Remote</option>
+						<option value="Hybrid">Hybrid</option>
+						<option value="In-Office">In-Office</option>
 					</select>
-					<input placeholder="Available Start Date" class="sim" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+					<input placeholder="Available Start Date" class="sim" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" required />
 				</div>
 				<hr>
 				<h3>Upload Your CV</h3>
 				<div class="form-container">
 					<div id="cv-container">
-						<input type="file" name="myfile">
+						<input type="file" name="myfile" required>
 					</div>
 				</div>
 				<hr>
@@ -101,5 +101,48 @@
 		</div>
 	</div>
 	<!--Footer-->
+
+	<div id="thankYouModal" class="modal">
+		<div class="modal-content">
+			<h3>Application Sent</h3>
+			<hr>
+			<p>Thank you for applying! We'll review your application and get back to you as soon as possible.</p>
+			<hr>
+			<button onclick="closeModal()">Close</button>
+		</div>
+	</div>
+	
+	<!--JS-->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const urlParams = new URLSearchParams(window.location.search);
+			const position = urlParams.get("position");
+
+			if (position) {
+				const selectElement = document.querySelector(".sol");
+				for (let option of selectElement.options) {
+					if (option.value === position) {
+						option.selected = true;
+						break;
+					}
+				}
+			}
+
+			// Form submission listener
+			const form = document.querySelector("form");
+			form.addEventListener("submit", function (event) {
+				event.preventDefault();
+				const modal = document.getElementById("thankYouModal");
+				modal.style.display = "flex";
+				form.reset();
+			});
+		});
+
+		// Close modal function
+		function closeModal() {
+			document.getElementById("thankYouModal").style.display = "none";
+		}
+	</script>
+	<!--JS-->
 </body>
 </html>
