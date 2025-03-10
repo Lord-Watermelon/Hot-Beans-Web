@@ -2,7 +2,7 @@
 
 .form-container {
 	margin: 0 auto;
-	width: 700px;
+	width: 65%;
 	text-align: center;
 }
 
@@ -14,27 +14,27 @@ input {
 
 .sil {
 	float: left;
-	width: 315px;
+	width: 45%;
 }
 
 .sir {
 	float: right;
-	width: 315px;
+	width: 45%;
 }
 
 .sim {
-	width: 315px;
+	width: 45%;
 }
 
 .li {
-	width: 677px;
+	width: 96.5%;
 }
 
 .sol {
 	padding: 10px;
 	font-size: 24px;
 	margin-bottom: 25px;
-	width: 339px;
+	width: 48.3%;
 	float: left;
 }
 
@@ -42,7 +42,7 @@ input {
 	padding: 10px;
 	font-size: 24px;
 	margin-bottom: 25px;
-	width: 339px;
+	width: 48.3%;
 	float: right;
 }
 
