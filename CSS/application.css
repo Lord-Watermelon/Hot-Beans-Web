@@ -52,6 +52,7 @@ input {
 	border-style: solid;
 	border-width: 1px;
 	border-color: #8e8e8e;
+	background-color: white;
 }
 
 #cv-container input[type="file"] {
@@ -86,7 +87,7 @@ input {
 }
 
 .modal-content {
-	background: #fff;
+	background: var(--bg);
 	padding: 20px;
 	border-radius: 12px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

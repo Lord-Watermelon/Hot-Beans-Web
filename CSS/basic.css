@@ -1,10 +1,80 @@
 @charset "utf-8";
 
+:root {
+	--bg: #ffffff;
+	--text: #000000;
+	--comp-name: #391A19;
+	--title: #A37443;
+	--header-bg: #fbf3db;
+	--nav-bg: #A37443;
+	--nav-active: #391A19;
+}
+
+[data-theme='light'] {
+	--bg: #ffffff;
+	--text: #000000;
+	--comp-name: #391A19;
+	--title: #A37443;
+	--header-bg: #fbf3db;
+	--nav-bg: #A37443;
+	--nav-active: #391A19;
+}
+
+[data-theme='dark'] {
+	--bg: #1f1f1f;
+	--text: #ffffff;
+	--comp-name: #391A19;
+	--title: #fbf3db;
+	--header-bg: #fbf3db;
+	--nav-bg: #181818;
+	--nav-active: #A37443;
+}
+
 body {
 	font-family: "Karla", sans-serif;
 	margin: 0;
 	margin-top: -36px;
 	padding: 0;
+	background-color: var(--bg);
+}
+
+body.enable-transition {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.night-toggle {
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin: 33px;
+	}
+	
+.night-toggle:hover{
+	cursor: pointer;
+}
+	
+.moon {
+	background-color: transparent;
+	box-shadow: -6px 1px 0 3px #275e8e;
+	border-left:3px solid #27476D;
+	border-radius:50%;
+	width: 30px;
+	height: 30px;
+	margin-left:8px;
+	margin-top:0px;
+}
+	
+.sun {
+	background-color: #fdd462;
+	box-shadow: 2px 0px 0px 1px #D19C29;
+	border-radius:50%;
+	width: 34px;
+	height: 34px;
+}
+
+.enable-transition .moon, 
+.enable-transition .sun {
+    transition: all 0.5s ease;
 }
 
 .wrapper {
@@ -16,34 +86,36 @@ body {
 h1 {
 	padding: 16px 0;
 	font-size: 53px;
-    color: #391A19;
+    color: var(--comp-name);
 }
 
 h2 {
 	font-size: 53px;
-	color: #A37443;
+	color: var(--title);
 	text-align: center;
 }
 
 h3 {
 	font-size: 38px;
-	color: #A37443;
+	color: var(--title);
 	text-align: center;
 }
 
 h4 {
 	font-size: 24px;
-	color: #A37443;
+	color: var(--title);
 	text-align: center;
 }
 
 p {
 	font-size: 24px;
 	text-align: center;
+	color: var(--text);
 }
 
 ul {
 	font-size: 24px;
+	color: var(--text);
 }
 
 .align-left {
@@ -55,7 +127,7 @@ ul {
 /*Header*/
 
 .header {
-	background-color: #fbf3db;
+	background-color: var(--header-bg);
 	height: 100px;
 }
 
@@ -71,7 +143,7 @@ ul {
 /*Nav Bar*/
 
 .nav {
-	background-color: #A37443;
+	background-color: var(--nav-bg);
 	overflow: hidden;
 }
 
@@ -91,7 +163,7 @@ ul {
 }
 
 .nav a.active {
-	background-color: #391A19;
+	background-color: var(--nav-active);
 	color: #FFF;
 }
 
@@ -103,7 +175,7 @@ ul {
 
 .footer {
 	width: 100%;
-	background-color: #A37443;
+	background-color: var(--nav-bg);
 	color: white;
 	text-align: center;
 }
@@ -111,6 +183,7 @@ ul {
 .footer p {
 	font-size: 17px;
 	margin: 0;
+	color: white;
 }
 
 .footer a {
@@ -124,3 +197,4 @@ ul {
 }
 
 /*Footer*/
+

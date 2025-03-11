@@ -1,0 +1,36 @@
+function switchMode() {
+  let moon = document.getElementById("moon");
+  let body = document.body;
+
+  // Add transition class to enable smooth animation
+  body.classList.add("enable-transition");
+  moon.classList.add("enable-transition");
+
+  // Toggle between light and dark themes
+  let isDarkMode = body.getAttribute("data-theme") === "dark";
+  body.setAttribute("data-theme", isDarkMode ? "light" : "dark");
+
+  // Toggle the icon class for smooth transition
+  moon.classList.toggle("moon");
+  moon.classList.toggle("sun");
+
+  // Save the theme preference in localStorage
+  localStorage.setItem("theme", body.getAttribute("data-theme"));
+}
+
+// Apply saved theme on page load without transition
+document.addEventListener("DOMContentLoaded", () => {
+  let savedTheme = localStorage.getItem("theme") || "light";
+  document.body.setAttribute("data-theme", savedTheme);
+
+  let moon = document.getElementById("moon");
+
+  // Set the correct icon without transition
+  if (savedTheme === "dark") {
+      moon.classList.remove("moon");
+      moon.classList.add("sun");
+  } else {
+      moon.classList.remove("sun");
+      moon.classList.add("moon");
+  }
+});
