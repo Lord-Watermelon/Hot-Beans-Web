@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<script>
-		(function() {
-			let savedTheme = localStorage.getItem("theme") || "light";
-			document.documentElement.setAttribute("data-theme", savedTheme);
-	
-			// Ensure the correct icon is set before the page renders
-			let iconClass = savedTheme === "dark" ? "sun" : "moon";
-			document.write('<style>#moon { visibility: hidden; }</style>'); // Hide icon during load
-			window.addEventListener("DOMContentLoaded", function() {
-				document.getElementById("moon").className = iconClass;
-				document.getElementById("moon").style.visibility = "visible"; // Show after setting
-			});
-		})();
-	</script>
+	<script src="JS/theme-toggle-preload.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hot Beans</title>
 	<link rel="icon" type="Image/jpg" href="Images/favicon.jpg">
@@ -64,7 +51,8 @@
 					<input type="text" class="sil" placeholder="Forename" required>
 					<input type="text" class="sir" placeholder="Surname" required>
 					<input type="email" class="li" placeholder="Email Address" required >
-					<input type="text" class="sim" placeholder="Phone Number" required>
+					<input type="text" class="sil" placeholder="Phone Number" required>
+					<input type="text" class="sir" placeholder="Pronouns" required>
 				</div>
 				<hr>
 				<h3>Experience & Qualifications</h3>
@@ -130,36 +118,7 @@
 	</div>
 	
 	<!--JS-->
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const urlParams = new URLSearchParams(window.location.search);
-			const position = urlParams.get("position");
-
-			if (position) {
-				const selectElement = document.querySelector(".sol");
-				for (let option of selectElement.options) {
-					if (option.value === position) {
-						option.selected = true;
-						break;
-					}
-				}
-			}
-
-			// Form submission listener
-			const form = document.querySelector("form");
-			form.addEventListener("submit", function (event) {
-				event.preventDefault();
-				const modal = document.getElementById("thankYouModal");
-				modal.style.display = "flex";
-				form.reset();
-			});
-		});
-
-		// Close modal function
-		function closeModal() {
-			document.getElementById("thankYouModal").style.display = "none";
-		}
-	</script>
+	<script src="JS/application.js"></script>
 	<script src="JS/theme-toggle"></script>
 	<!--JS-->
 </body>

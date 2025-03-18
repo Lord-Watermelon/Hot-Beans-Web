@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<script>
-		(function() {
-			let savedTheme = localStorage.getItem("theme") || "light";
-			document.documentElement.setAttribute("data-theme", savedTheme);
-	
-			// Ensure the correct icon is set before the page renders
-			let iconClass = savedTheme === "dark" ? "sun" : "moon";
-			document.write('<style>#moon { visibility: hidden; }</style>'); // Hide icon during load
-			window.addEventListener("DOMContentLoaded", function() {
-				document.getElementById("moon").className = iconClass;
-				document.getElementById("moon").style.visibility = "visible"; // Show after setting
-			});
-		})();
-	</script>
+	<script src="JS/theme-toggle-preload.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hot Beans</title>
 	<link rel="icon" type="Image/jpg" href="Images/favicon.jpg">
@@ -62,13 +49,13 @@
 			  	<td>
 					<img src="Images/ceo.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Theodore Peterson</h3>
-					<h4>Founder and CEO</h4>
+					<h4>Founder and CEO - He/They</h4>
 					<p>The visionary behind Hot Beans Web, Theodore founded the company in 2011 with a passion for innovation and high-quality web development. He leads the company with a focus on creativity, collaboration, and pushing technological boundaries.</p>
 				</td>
 				<td>
 					<img src="Images/cto.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Jeremy Ratatouille</h3>
-					<h4>Chief Technical Officer</h4>
+					<h4>Chief Technical Officer - He/Him</h4>
 					<p>With over a decade of experience in web development, Jeremy oversees the company's technical strategy, ensuring we stay ahead of industry trends and deliver top-tier digital solutions.</p>
 				</td>
 			</tr>
@@ -76,13 +63,13 @@
 				<td>
 					<img src="Images/lead-developer.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Jordan Andromeda</h3>
-					<h4>Lead Web Developer</h4>
+					<h4>Lead Web Developer - They/Them</h4>
 					<p>A full-stack expert, Jordan specialises in front-end frameworks and scalable back-end systems. He mentors the development team and ensures our code meets the highest industry standards.</p>
 				</td>
 				<td>
 					<img src="Images/project-manager.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Krimplegorp</h3>
-					<h4>Project Manager</h4>
+					<h4>Project Manager - She/They</h4>
 					<p>Krimplegorp ensures smooth project execution by managing timelines, coordinating teams, and maintaining strong client communication from start to finish.</p>
 				</td>
 			</tr>
@@ -90,13 +77,13 @@
 				<td>
 					<img src="Images/senior-developer.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Richard Bones</h3>
-					<h4>Senior Web Developer</h4>
+					<h4>Senior Web Developer - He/It</h4>
 					<p>Richard specialises in back-end development, database management, and server-side optimisation, ensuring our websites and applications are secure, fast, and efficient.</p>
 				</td>
 				<td>
 					<img src="Images/junior-developer.jpg" alt="Hot Beans Logo" height="300">
 					<h3>Mediterranean Seabass</h3>
-					<h4>Junior Web Developer</h4>
+					<h4>Junior Web Developer - Any</h4>
 					<p>As a recent addition to the team, Mediterranean Seabass brings fresh ideas and a passion for coding. He's eager to learn from experienced developers while contributing to exciting projects.</p>
 				</td>
 			</tr>
